@@ -1,6 +1,6 @@
 build:
 	protoc -I. --go_out=plugins=grpc:$(GOPATH)/src/Microservices/consignment-service \
-	  proto/consignment.proto
+	  lib/consignment.proto
 	docker build -t consignment-service .
 
 run:
