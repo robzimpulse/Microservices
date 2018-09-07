@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	pb "Microservices/consignment-service/lib"
+	pb "Microservices/consignment-service/proto/consignment"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"golang.org/x/net/context"
