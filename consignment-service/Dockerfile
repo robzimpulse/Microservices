@@ -12,13 +12,11 @@ COPY . $GOPATH/src/app/
 WORKDIR $GOPATH/src/app/
 
 # Get dependancies
-RUN go get -d -v
+RUN go get -u github.com/golang/dep/cmd/dep
+RUN dep ensure -vendor-only
 
 # Build the binary
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags='-w -s' -o /go/bin/app
-
-
-
 
 ## STEP 2 build a small image start from scratch
 FROM scratch
